@@ -45,10 +45,10 @@
         <executions>
           <execution>
           <id>1</id>
-            <phase>validate</phase>
+            <phase>pre-clean</phase>
             <configuration>
               <tasks>
-				<echo>this a validate phase------------></echo>
+				<echo>pre clean phase------------></echo>
               </tasks>
             </configuration>
             <goals>
@@ -57,16 +57,29 @@
           </execution>
           <execution>
           <id>2</id>
-            <phase>test</phase>
+            <phase>clean</phase>
             <configuration>
               <tasks>
-				<echo>test a validate phase------------></echo>
+				<echo>clean phase------------></echo>
               </tasks>
             </configuration>
             <goals>
               <goal>run</goal>
             </goals>
           </execution>
+          <execution>
+          <id>3</id>
+            <phase>post-clean</phase>
+            <configuration>
+              <tasks>
+				<echo>post clean phase------------></echo>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          
         </executions>
       </plugin>
     </plugins>
